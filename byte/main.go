@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/funny/pprof"
 	_"unsafe"
 )
 
@@ -28,4 +29,8 @@ func main() {
 	b[1] = byte(v)
 
 	fmt.Println(b)
+
+	summary := pprof.GCSummary()
+
+	println(summary.String())
 }
